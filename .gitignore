@@ -1,0 +1,6 @@
+ein-english-main/
+node_modules/
+dist/
+.DS_Store
+.env
+*.log
