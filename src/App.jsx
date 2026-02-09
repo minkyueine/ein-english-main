@@ -52,30 +52,31 @@ const App = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const base = import.meta.env.BASE_URL;
+  const base = import.meta.env.BASE_URL || './';
+  const imgBase = base.endsWith('/') ? base : `${base}/`;
 
   const books = [
-    { title: "일반 회화 교재", tag: "BEST", desc: "실제 원어민이 쓰는 표현으로, 교과서에 없는 살아 있는 영어를 배웁니다.", img: `${base}images/materials/regular-class.png` },
-    { title: "비즈니스 교재", tag: "HOT", desc: "회의·메일·보고 등 상황별 예문으로 실무에서 바로 쓰는 표현을 익힙니다.", img: `${base}images/materials/business.png` },
-    { title: "파닉스 교재", tag: "NEW", desc: "알파벳과 발음 규칙부터 시작해, 읽기·쓰기의 기초를 탄탄하게 잡아 줍니다.", img: `${base}images/materials/phonics.png` },
-    { title: "어린이 원서 교재", tag: null, desc: "미국·캐나다 초등교과용 영어 학습 프로그램, 3천 권 이상의 원서를 제공합니다.", img: `${base}images/materials/razkids-english-original-book.png` },
-    { title: "상황 & 사진 묘사", tag: null, desc: "사진을 보고 설명하며 이야기 만들기, 상황별 질문을 통해 영어를 배웁니다.", img: `${base}images/materials/description-of-situation-and-photo.png` },
-    { title: "비디오 교재", tag: null, desc: "TED 비디오를 활용하여 어휘, 듣기, 깊이 있는 말하기 능력을 키워줍니다.", img: `${base}images/materials/video.png` },
-    { title: "패턴 교재", tag: null, desc: "실생활 예문과 패턴을 반복 연습하며 자연스러운 대화 능력을 키워줍니다.", img: `${base}images/materials/english-pattern.png` },
-    { title: "주니어 회화", tag: null, desc: "어린이를 위한 전용 화상 수업 교재로, 실생활 주제로 재미있게 학습합니다.", img: `${base}images/materials/junior-english.png` },
-    { title: "이디엄 학습", tag: null, desc: "일상생활에서 자주 쓰이는 속담과 관용구를 재미있는 이야기와 함께 배웁니다.", img: `${base}images/materials/idioms-me-and-you.png` }
+    { title: "일반 회화 교재", tag: "BEST", desc: "실제 원어민이 쓰는 표현으로, 교과서에 없는 살아 있는 영어를 배웁니다.", img: `${imgBase}images/materials/regular-class.png` },
+    { title: "비즈니스 교재", tag: "HOT", desc: "회의·메일·보고 등 상황별 예문으로 실무에서 바로 쓰는 표현을 익힙니다.", img: `${imgBase}images/materials/business.png` },
+    { title: "파닉스 교재", tag: "NEW", desc: "알파벳과 발음 규칙부터 시작해, 읽기·쓰기의 기초를 탄탄하게 잡아 줍니다.", img: `${imgBase}images/materials/phonics.png` },
+    { title: "어린이 원서 교재", tag: null, desc: "미국·캐나다 초등교과용 영어 학습 프로그램, 3천 권 이상의 원서를 제공합니다.", img: `${imgBase}images/materials/razkids-english-original-book.png` },
+    { title: "상황 & 사진 묘사", tag: null, desc: "사진을 보고 설명하며 이야기 만들기, 상황별 질문을 통해 영어를 배웁니다.", img: `${imgBase}images/materials/description-of-situation-and-photo.png` },
+    { title: "비디오 교재", tag: null, desc: "TED 비디오를 활용하여 어휘, 듣기, 깊이 있는 말하기 능력을 키워줍니다.", img: `${imgBase}images/materials/video.png` },
+    { title: "패턴 교재", tag: null, desc: "실생활 예문과 패턴을 반복 연습하며 자연스러운 대화 능력을 키워줍니다.", img: `${imgBase}images/materials/english-pattern.png` },
+    { title: "주니어 회화", tag: null, desc: "어린이를 위한 전용 화상 수업 교재로, 실생활 주제로 재미있게 학습합니다.", img: `${imgBase}images/materials/junior-english.png` },
+    { title: "이디엄 학습", tag: null, desc: "일상생활에서 자주 쓰이는 속담과 관용구를 재미있는 이야기와 함께 배웁니다.", img: `${imgBase}images/materials/idioms-me-and-you.png` }
   ];
 
   const allReviews = [
-    { type: 'image', label: '수업 현장', img: `${base}images/real-success-stories/class1.png` },
+    { type: 'image', label: '수업 현장', img: `${imgBase}images/real-success-stories/class1.png` },
     { type: 'text', author: '이*현 (30대 직장인)', title: "회의에서 영어로 말문이 막히지 않아요", content: '영어 울렁증이 심해서 회의 때마다 식은땀을 흘렸는데, 아인에서 비즈니스 과정을 들은 지 3개월 만에 제가 먼저 의견을 제시하게 됐습니다. 실전 위주라 바로 업무에 쓸 수 있는 게 가장 좋았어요.' },
-    { type: 'image', label: '꼼꼼한 피드백', img: `${base}images/real-success-stories/feedback1.jpg` },
+    { type: 'image', label: '꼼꼼한 피드백', img: `${imgBase}images/real-success-stories/feedback1.jpg` },
     { type: 'text', author: '박*은 (40대 주부)', title: "가족 여행에서, 제가 다 해결했어요", content: '애들 다 키우고 늦은 나이에 시작했는데 선생님이 너무 친절하세요. 가족 여행 갔을 때 혼자서 호텔 체크인하고 주문하는 거 보고 가족들이 다 놀랐습니다. 정말 뿌듯해요!' },
-    { type: 'image', label: '성장 리포트', img: `${base}images/real-success-stories/report.png` },
+    { type: 'image', label: '성장 리포트', img: `${imgBase}images/real-success-stories/report.png` },
     { type: 'text', author: '김*현 (초등학생)', title: "영어가 이제 숙제가 아니라 놀이 같아요", content: '애니메이션으로 배우니까 학원보다 훨씬 재밌어요! 선생님이랑 수다 떠는 시간이 매일 기다려집니다.' },
-    { type: 'image', label: '수업 화면', img: `${base}images/real-success-stories/class2.jpeg` },
+    { type: 'image', label: '수업 화면', img: `${imgBase}images/real-success-stories/class2.jpeg` },
     { type: 'text', author: '정*아 (중학생)', title: "학교 스피킹 시험에서 만점 받았어요!", content: '문법만 할 때는 몰랐는데, 직접 입으로 뱉어보니 영어 실력이 부쩍 늘어난 게 느껴져요.' },
-    { type: 'image', label: '1:1 밀착 관리', img: `${base}images/real-success-stories/feedback2.png` },
+    { type: 'image', label: '1:1 밀착 관리', img: `${imgBase}images/real-success-stories/feedback2.png` },
     { type: 'text', author: '최*민 (취준생)', title: "오픽 IH 달성했습니다!", content: '스크립트 무조건 외우라고 하는 학원 다니다가 포기했었는데, 아인 선생님이랑 프리토킹하면서 자연스러운 표현 익히니까 금방 늘더라고요. 감사합니다!' },
     { type: 'text', author: '강*우 (40대 사업가)', title: "새벽 시간 수업이 가능해서 좋아요", content: '일이 바빠서 학원 다닐 시간이 없었는데, 출근 전 20분씩 꾸준히 하니까 확실히 감이 안 떨어지네요. 시간 변경도 유연해서 좋습니다.' },
     { type: 'text', author: '윤*지 (대학생)', title: "첨삭 꼼꼼하게 해주셔서 너무 좋아요", content: '제가 쓴 에세이를 실시간으로 고쳐주시는데, 문법 오류뿐만 아니라 더 원어민스러운 표현으로 바꿔주시는 게 진짜 도움 많이 됩니다.' }
@@ -123,7 +124,7 @@ const App = () => {
       <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-slate-200 px-4 md:px-6 py-4 flex justify-between items-center transition-all">
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer" onClick={scrollToHero}>
-          <img src={`${base}ain-english-logo.png`} alt="아인잉글리쉬" className="h-8 md:h-9 object-contain" />
+          <img src={`${imgBase}ain-english-logo.png`} alt="아인잉글리쉬" className="h-8 md:h-9 object-contain" />
         </div>
 
         {/* Desktop Menu */}
@@ -163,7 +164,7 @@ const App = () => {
         </div>
       )}
 
-      <header className="relative pt-6 pb-8 xs:pt-8 xs:pb-12 md:pt-20 md:pb-32 px-4 xs:px-5 md:px-6 text-center border-b border-slate-200/80 overflow-hidden">
+      <header className="relative pt-4 pb-6 xs:pt-6 xs:pb-8 md:pt-12 md:pb-20 px-4 xs:px-5 md:px-6 text-center border-b border-slate-200/80 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-slate-50/90 z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(59,130,246,0.06),transparent)] z-0" />
         <img
@@ -172,21 +173,21 @@ const App = () => {
           className="absolute inset-0 w-full h-full object-cover -z-10 opacity-25"
         />
         <div className="max-w-4xl mx-auto relative z-10">
-          <div className="inline-block border-2 border-blue-200/80 bg-white/90 backdrop-blur-sm px-4 py-1.5 xs:px-5 xs:py-2 mb-3 xs:mb-4 md:mb-8 text-[10px] xs:text-[11px] font-bold tracking-[0.2em] uppercase text-blue-600 rounded-full shadow-md shadow-blue-100/50 animate-bounce-subtle">
+          <div className="inline-block border-2 border-blue-200/80 bg-white/90 backdrop-blur-sm px-4 py-1.5 xs:px-5 xs:py-2 mb-2 xs:mb-3 md:mb-5 text-[10px] xs:text-[11px] font-bold tracking-[0.2em] uppercase text-blue-600 rounded-full shadow-md shadow-blue-100/50 animate-bounce-subtle">
             Today's Limited Offer
           </div>
-          <h1 className="text-3xl xs:text-4xl md:text-5xl lg:text-7xl font-black mb-3 xs:mb-4 md:mb-8 leading-[1.1] md:leading-[1.15] tracking-tight text-slate-900 drop-shadow-md">
+          <h1 className="text-3xl xs:text-4xl md:text-5xl lg:text-7xl font-black mb-2 xs:mb-3 md:mb-5 leading-[1.1] md:leading-[1.15] tracking-tight text-slate-900 drop-shadow-md">
             영포자도 3개월이면<br />
             말문이 트이는<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-700 italic underline decoration-blue-300 decoration-4 xs:decoration-8 underline-offset-4 xs:underline-offset-8 pr-2 xs:pr-4 py-1">1:1 실시간 문장교정</span>
           </h1>
-          <div className="text-[13px] xs:text-[15px] sm:text-base md:text-xl lg:text-2xl text-slate-700 mb-4 xs:mb-6 md:mb-14 font-bold leading-relaxed max-w-2xl mx-auto">
+          <div className="text-[13px] xs:text-[15px] sm:text-base md:text-xl lg:text-2xl text-slate-700 mb-3 xs:mb-4 md:mb-8 font-bold leading-relaxed max-w-2xl mx-auto">
             "그저 웃고 떠드는 화상영어가 아닙니다."<br />
             <span className="text-slate-900 font-black bg-yellow-300/30 px-1 rounded">틀린 문장은 그 자리에서 바로 고쳐주는</span><br className="md:hidden" /> '현미경 첨삭'을 경험하세요.
           </div>
 
           {/* Gift Box - Mobile Optimized */}
-          <div className="bg-white/80 border border-red-100 rounded-2xl xs:rounded-3xl md:rounded-[2.5rem] py-3 px-3 xs:py-4 xs:px-4 md:py-10 md:px-8 mb-4 xs:mb-6 md:mb-12 shadow-md inline-block w-full max-w-2xl transform hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group backdrop-blur-md">
+          <div className="bg-white/80 border border-red-100 rounded-2xl xs:rounded-3xl md:rounded-[2.5rem] py-3 px-3 xs:py-4 xs:px-4 md:py-8 md:px-8 mb-3 xs:mb-4 md:mb-8 shadow-md inline-block w-full max-w-2xl transform hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group backdrop-blur-md">
             <div className="absolute top-0 right-0 w-40 h-40 bg-red-50 rounded-full blur-3xl -mr-16 -mt-16 opacity-70"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-amber-50 rounded-full blur-2xl -ml-8 -mb-8 opacity-50"></div>
 
@@ -212,7 +213,7 @@ const App = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center gap-3 xs:gap-5">
+          <div className="flex flex-col items-center gap-2 xs:gap-4">
             <button onClick={() => window.location.href = 'https://einenglish.com/apply'} className="w-full max-w-lg bg-gradient-to-r from-slate-900 to-slate-800 text-white px-6 py-3.5 xs:px-8 xs:py-5 md:py-6 text-lg xs:text-xl md:text-2xl lg:text-3xl font-black rounded-xl xs:rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center gap-2 xs:gap-3 hover:from-black hover:to-slate-900 hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] md:shadow-[0_20px_50px_-12px_rgba(15,23,42,0.5)] border border-slate-700/50">
               무료수업 시간 선택하기 <ArrowRight size={24} md:size={28} strokeWidth={3} />
             </button>
@@ -228,7 +229,7 @@ const App = () => {
         </div>
       </header>
 
-      <section id="awards" className="py-10 xs:py-14 md:py-20 bg-black text-white text-center relative overflow-hidden">
+      <section id="awards" className="py-8 xs:py-10 md:py-14 bg-black text-white text-center relative overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200"
           alt="Office Background"
@@ -237,7 +238,7 @@ const App = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-black/70"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,rgba(234,179,8,0.06),transparent)] pointer-events-none" />
         <div className="max-w-6xl mx-auto px-4 xs:px-6 md:px-8 relative z-10">
-          <h3 className="text-[9px] xs:text-[10px] md:text-xs font-extrabold text-amber-500/90 mb-6 xs:mb-8 md:mb-12 uppercase tracking-[0.3em] xs:tracking-[0.4em] text-center">Awards & History</h3>
+          <h3 className="text-[6px] xs:text-[7px] md:text-xs font-extrabold text-amber-500/90 mb-4 xs:mb-6 md:mb-8 uppercase tracking-[0.2em] xs:tracking-[0.3em] md:tracking-[0.4em] text-center">Awards & History</h3>
 
           {/* Infinite Scrolling Marquee */}
           <div className="relative overflow-hidden">
@@ -262,7 +263,7 @@ const App = () => {
                   <div className="w-16 h-16 md:w-20 md:h-20 mb-3 md:mb-4 relative hover:scale-110 transition-transform duration-300 drop-shadow-2xl">
                     <div className="absolute inset-0 bg-amber-500/10 rounded-full blur-xl scale-75 group-hover:bg-amber-500/20 transition-colors"></div>
                     <img
-                      src={`${base}images/awards/${award.img}`}
+                      src={`${imgBase}images/awards/${award.img}`}
                       alt={award.name}
                       className="w-full h-full object-contain relative z-10"
                       onError={(e) => {
@@ -300,7 +301,7 @@ const App = () => {
                   <div className="w-16 h-16 md:w-20 md:h-20 mb-3 md:mb-4 relative hover:scale-110 transition-transform duration-300 drop-shadow-2xl">
                     <div className="absolute inset-0 bg-amber-500/10 rounded-full blur-xl scale-75 group-hover:bg-amber-500/20 transition-colors"></div>
                     <img
-                      src={`${base}images/awards/${award.img}`}
+                      src={`${imgBase}images/awards/${award.img}`}
                       alt={award.name}
                       className="w-full h-full object-contain relative z-10"
                       onError={(e) => {
@@ -329,24 +330,24 @@ const App = () => {
         </div>
       </section>
 
-      <section className="py-8 xs:py-10 md:py-16 px-4 xs:px-5 md:px-6 bg-gradient-to-b from-slate-50 to-white border-b border-slate-200/80">
+      <section className="py-6 xs:py-8 md:py-12 px-4 xs:px-5 md:px-6 bg-gradient-to-b from-slate-50 to-white border-b border-slate-200/80">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-6 xs:mb-8 md:mb-16">
-            <p className="text-xs font-bold text-blue-600 uppercase tracking-[0.3em] mb-3">Review</p>
+          <div className="text-center mb-4 xs:mb-6 md:mb-10">
+            <p className="text-xs font-bold text-blue-600 uppercase tracking-[0.3em] mb-2">Review</p>
             <h3 className="text-sm xs:text-base md:text-xl lg:text-2xl font-black text-slate-500 italic">"이미 수많은 수강생이 증명했습니다"</h3>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-5 md:gap-6">
             {[
               { text: "영어 울렁증이 심해서 회의 때마다 식은땀을 흘렸는데, 아인에서 교정받은지 3개월 만에 제가 먼저 의견을 제시하게 됐습니다.", author: "이*현 (30대 직장인)" },
               { text: "가족 여행 갔을 때 혼자서 호텔 체크인하고 주문하는 거 보고 가족들이 다 놀랐습니다. 정말 뿌듯해요!", author: "박*은 (40대 주부)" }
             ].map((review, i) => (
-              <div key={i} className="bg-white p-6 xs:p-8 md:p-10 rounded-2xl xs:rounded-[2rem] md:rounded-[2.5rem] shadow-[0_12px_40px_-12px_rgba(0,0,0,0.08)] border border-slate-100 flex flex-col justify-between hover:-translate-y-2 hover:shadow-[0_24px_50px_-16px_rgba(0,0,0,0.12)] hover:border-blue-100/80 transition-all duration-300 group">
+              <div key={i} className="bg-white p-5 xs:p-6 md:p-8 rounded-2xl xs:rounded-[2rem] md:rounded-[2.5rem] shadow-[0_12px_40px_-12px_rgba(0,0,0,0.08)] border border-slate-100 flex flex-col justify-between hover:-translate-y-2 hover:shadow-[0_24px_50px_-16px_rgba(0,0,0,0.12)] hover:border-blue-100/80 transition-all duration-300 group">
                 <div>
-                  <div className="text-yellow-400 flex gap-1 mb-6">
+                  <div className="text-yellow-400 flex gap-1 mb-4">
                     {[...Array(5)].map((_, j) => <Star key={j} fill="currentColor" size={14} className="xs:w-[18px] xs:h-[18px]" />)}
                   </div>
-                  <p className="text-base xs:text-lg md:text-xl font-bold text-slate-700 mb-6 xs:mb-8 leading-relaxed break-keep">
+                  <p className="text-base xs:text-lg md:text-xl font-bold text-slate-700 mb-4 xs:mb-6 leading-relaxed break-keep">
                     "{review.text.split('아인에서').map((part, idx, arr) => (
                       <React.Fragment key={idx}>
                         {part}
@@ -355,7 +356,7 @@ const App = () => {
                     ))}"
                   </p>
                 </div>
-                <div className="font-bold text-slate-400 text-xs xs:text-sm border-t border-slate-50 pt-4 xs:pt-6 flex justify-between items-center">
+                <div className="font-bold text-slate-400 text-xs xs:text-sm border-t border-slate-50 pt-3 xs:pt-4 flex justify-between items-center">
                   <span>{review.author}</span>
                   <MessageCircle size={20} className="text-slate-200 group-hover:text-blue-100 transition-colors" />
                 </div>
@@ -365,15 +366,15 @@ const App = () => {
         </div>
       </section>
 
-      <section className="py-8 xs:py-10 md:py-16 px-4 xs:px-5 md:px-6 bg-white border-b border-slate-100">
+      <section className="py-6 xs:py-8 md:py-12 px-4 xs:px-5 md:px-6 bg-white border-b border-slate-100">
         <div className="max-w-6xl mx-auto">
 
-          <div className="pt-8 xs:pt-10 md:pt-12">
-            <h3 className="text-lg xs:text-xl md:text-2xl font-black text-slate-800 mb-6 xs:mb-8 md:mb-10 text-center uppercase tracking-tight">Real Video Reviews <span className="text-red-500 text-xs xs:text-sm align-top animate-pulse">● REC</span></h3>
+          <div className="pt-4 xs:pt-6 md:pt-8">
+            <h3 className="text-lg xs:text-xl md:text-2xl font-black text-slate-800 mb-4 xs:mb-6 md:mb-8 text-center uppercase tracking-tight">Real Video Reviews <span className="text-red-500 text-xs xs:text-sm align-top animate-pulse">● REC</span></h3>
 
             {/* Adult Reviews Row */}
-            <div className="mb-10 xs:mb-12">
-              <div className="flex items-center justify-between mb-4 xs:mb-6 px-4">
+            <div className="mb-6 xs:mb-8">
+              <div className="flex items-center justify-between mb-3 xs:mb-4 px-4">
                 <div className="flex items-center gap-3">
                   <span className="bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Adult</span>
                   <h4 className="text-lg font-black text-slate-700">성인/직장인 베스트<br className="md:hidden" /> 영상 후기</h4>
@@ -382,7 +383,7 @@ const App = () => {
                   전체보기 <ArrowRight size={12} />
                 </button>
               </div>
-              <div className="flex overflow-x-auto gap-4 pb-4 xs:pb-6 snap-x px-4 -mx-4 scrollbar-hide">
+              <div className="flex overflow-x-auto gap-3 pb-3 xs:pb-4 snap-x px-4 -mx-4 scrollbar-hide">
                 {videoReviews
                   .filter(video => video.category === 'adult')
                   .map((video, i) => (
@@ -402,8 +403,8 @@ const App = () => {
             </div>
 
             {/* Junior Reviews Row */}
-            <div className="mb-8 xs:mb-10">
-              <div className="flex items-center justify-between mb-4 xs:mb-6 px-4">
+            <div className="mb-6 xs:mb-8">
+              <div className="flex items-center justify-between mb-3 xs:mb-4 px-4">
                 <div className="flex items-center gap-3">
                   <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Junior</span>
                   <h4 className="text-lg font-black text-slate-700">주니어/학생 베스트<br className="md:hidden" /> 영상 후기</h4>
@@ -412,7 +413,7 @@ const App = () => {
                   전체보기 <ArrowRight size={12} />
                 </button>
               </div>
-              <div className="flex overflow-x-auto gap-4 pb-4 xs:pb-6 snap-x px-4 -mx-4 scrollbar-hide">
+              <div className="flex overflow-x-auto gap-3 pb-3 xs:pb-4 snap-x px-4 -mx-4 scrollbar-hide">
                 {videoReviews
                   .filter(video => video.category === 'junior')
                   .map((video, i) => (
@@ -440,13 +441,13 @@ const App = () => {
       </section>
 
       {/* Free Level Test CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-600 to-indigo-700 text-white text-center relative overflow-hidden">
+      <section className="py-12 md:py-16 px-6 bg-gradient-to-br from-blue-600 to-indigo-700 text-white text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="max-w-4xl mx-auto relative z-10">
-          <h3 className="text-3xl md:text-4xl font-black mb-6 leading-tight drop-shadow-md">
+          <h3 className="text-3xl md:text-4xl font-black mb-4 leading-tight drop-shadow-md">
             "저도 이렇게 영어가 늘 수 있을까요?"
           </h3>
-          <p className="text-lg md:text-xl text-blue-100 mb-10 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-blue-100 mb-6 font-medium leading-relaxed">
             망설이지 마세요. 아인잉글리쉬와 함께라면 가능합니다.<br className="hidden md:block" />
             지금 바로 무료 레벨테스트로 내 실력을 확인해보세요.
           </p>
@@ -456,21 +457,21 @@ const App = () => {
         </div>
       </section>
 
-      <section id="unlimited" className="py-10 xs:py-12 md:py-16 px-4 xs:px-5 md:px-6 bg-[#0f172a] text-white overflow-hidden relative">
+      <section id="unlimited" className="py-8 xs:py-10 md:py-12 px-4 xs:px-5 md:px-6 bg-[#0f172a] text-white overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 via-purple-600 to-red-600"></div>
         <div className="absolute -left-40 top-40 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
         <div className="absolute -right-40 bottom-0 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none"></div>
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 border border-slate-700 bg-slate-800/50 rounded-full px-5 py-2 mb-10 backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 border border-slate-700 bg-slate-800/50 rounded-full px-5 py-2 mb-6 backdrop-blur-md">
             <Star size={14} className="text-yellow-400" fill="currentColor" />
             <span className="text-xs font-bold text-slate-300 tracking-widest uppercase">Premium Service</span>
           </div>
-          <h2 className="text-2xl md:text-4xl lg:text-6xl font-black mb-6 md:mb-8 leading-tight tracking-tight">
+          <h2 className="text-2xl md:text-4xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight tracking-tight">
             영어 실력?<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 italic px-2">무제한(Unlimited)</span>으로<br />
             수직상승 시켜드립니다.
           </h2>
-          <p className="text-sm md:text-lg lg:text-xl text-slate-400 mb-8 md:mb-20 font-medium leading-relaxed">아인만의 '무제한 맞춤 솔루션'으로<br className="md:hidden" /> 망설임 없이 시작하세요.</p>
+          <p className="text-sm md:text-lg lg:text-xl text-slate-400 mb-6 md:mb-12 font-medium leading-relaxed">아인만의 '무제한 맞춤 솔루션'으로<br className="md:hidden" /> 망설임 없이 시작하세요.</p>
           {/* Unified "무제한 3종 세트" Card */}
           <div className="max-w-2xl mx-auto">
             <div className="bg-gradient-to-br from-white/10 to-white/5 border-2 border-white/20 p-8 md:p-12 rounded-[2.5rem] backdrop-blur-md relative overflow-hidden group hover:border-white/30 transition-all shadow-[0_20px_60px_-15px_rgba(255,255,255,0.1)]">
@@ -479,19 +480,19 @@ const App = () => {
               <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-tr from-green-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
 
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 text-black text-xs font-black px-4 py-1.5 rounded-full mb-6 shadow-[0_0_20px_rgba(34,197,94,0.4)]">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 text-black text-xs font-black px-4 py-1.5 rounded-full mb-4 shadow-[0_0_20px_rgba(34,197,94,0.4)]">
                 <Zap size={14} fill="currentColor" />
                 <span>무제한 3종 패키지</span>
               </div>
 
               {/* Main Title */}
-              <h3 className="text-2xl md:text-3xl font-black text-white mb-8 leading-tight">
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-5 leading-tight">
                 매칭 · 첨삭 · 복습<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-purple-400">모두 무제한</span>으로 제공
               </h3>
 
               {/* Feature List */}
-              <div className="space-y-5 relative z-10">
+              <div className="space-y-4 relative z-10">
                 {[
                   { icon: <RotateCcw size={20} className="text-blue-400" />, title: "무제한 매칭", desc: "강사 교체 횟수 제한 없음" },
                   { icon: <PenTool size={20} className="text-green-400" />, title: "무제한 첨삭", desc: "영어 일기·에세이 무한 첨삭" },
@@ -513,14 +514,14 @@ const App = () => {
               </div>
 
               {/* Bottom CTA */}
-              <div className="mt-8 pt-6 border-t border-white/10">
+              <div className="mt-6 pt-4 border-t border-white/10">
                 <p className="text-slate-300 text-sm font-bold text-center">
                   💎 추가 비용 없이 <span className="text-green-400">모든 혜택</span>을 누리세요
                 </p>
               </div>
             </div>
           </div>
-          <div className="mt-20 bg-gradient-to-r from-red-600 to-red-500 rounded-3xl p-[2px] inline-block w-full max-w-2xl hover:scale-[1.02] transition-transform cursor-pointer shadow-[0_20px_60px_-15px_rgba(220,38,38,0.5)] group">
+          <div className="mt-12 bg-gradient-to-r from-red-600 to-red-500 rounded-3xl p-[2px] inline-block w-full max-w-2xl hover:scale-[1.02] transition-transform cursor-pointer shadow-[0_20px_60px_-15px_rgba(220,38,38,0.5)] group">
             <div className="bg-[#0f172a] rounded-[1.4rem] py-6 px-4 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4 h-full relative overflow-hidden" onClick={() => window.location.href = 'https://einenglish.com/apply'}>
               <div className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="text-lg font-bold text-slate-300 relative z-10">지금 신청하면 <span className="text-white underline decoration-red-500 decoration-2 underline-offset-4">체험비 0원</span></div>
@@ -529,38 +530,38 @@ const App = () => {
               </div>
             </div>
           </div>
-          <p className="mt-6 text-slate-500 text-sm font-bold tracking-wide">※ 체험 후기 작성 시 3,000원 적립금 100% 추가 증정</p>
+          <p className="mt-4 text-slate-500 text-sm font-bold tracking-wide">※ 체험 후기 작성 시 3,000원 적립금 100% 추가 증정</p>
         </div>
       </section>
 
-      <section id="safe-zone" className="py-10 xs:py-12 md:py-16 px-4 xs:px-5 md:px-6 bg-gradient-to-b from-blue-50/80 to-slate-50/50">
-        <div className="max-w-4xl mx-auto border-4 xs:border-[6px] md:border-[8px] border-slate-900 rounded-[2rem] xs:rounded-[2.5rem] md:rounded-[3rem] p-6 xs:p-8 md:p-16 bg-white relative overflow-hidden shadow-[0_24px_60px_-16px_rgba(15,23,42,0.2)]">
-          <div className="absolute top-0 right-0 p-10 opacity-[0.04] pointer-events-none"><HeartHandshake size={300} /></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl -ml-32 -mb-32 pointer-events-none" />
+      <section id="safe-zone" className="py-8 xs:py-10 md:py-12 px-4 xs:px-5 md:px-6 bg-gradient-to-b from-blue-50/80 to-slate-50/50">
+        <div className="max-w-4xl mx-auto border-4 xs:border-[5px] md:border-[6px] border-slate-900 rounded-xl xs:rounded-2xl md:rounded-[2rem] p-4 xs:p-5 md:p-8 bg-white relative overflow-hidden shadow-[0_24px_60px_-16px_rgba(15,23,42,0.2)]">
+          <div className="absolute top-0 right-0 p-6 opacity-[0.04] pointer-events-none"><HeartHandshake size={200} /></div>
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-100/30 rounded-full blur-3xl -ml-24 -mb-24 pointer-events-none" />
           <div className="relative z-10 text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-5xl font-black mb-12 md:mb-16 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 leading-tight uppercase italic tracking-tighter text-slate-900">
-              <ShieldCheck className="text-blue-600 drop-shadow-md" size={60} /> 손해 볼 것 전혀 없습니다
+            <h2 className="text-xl md:text-2xl lg:text-4xl font-black mb-4 md:mb-6 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 leading-tight uppercase italic tracking-tighter text-slate-900">
+              <ShieldCheck className="text-blue-600 drop-shadow-md" size={44} /> 손해 볼 것 전혀 없습니다
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 text-center md:text-left mb-16">
-              <div className="space-y-6">
-                <h4 className="text-blue-600 font-black text-2xl border-b-2 border-blue-100 pb-3 mb-6 uppercase tracking-tighter italic">100% Free</h4>
-                <div className="flex items-center justify-center md:justify-start gap-4 font-bold text-lg text-slate-700 bg-blue-50/50 p-3 rounded-xl"><CheckCircle className="text-blue-600 shrink-0" size={24} fill="white" /> 15분 1:1 체험</div>
-                <div className="flex items-center justify-center md:justify-start gap-4 font-bold text-lg text-slate-700 bg-blue-50/50 p-3 rounded-xl"><CheckCircle className="text-blue-600 shrink-0" size={24} fill="white" /> 강점 찾기 리포트</div>
-                <p className="text-slate-400 font-bold text-sm md:pl-2">카드 정보 입력 없이 100% 무료로 제공됩니다.</p>
+            <div className="grid md:grid-cols-2 gap-5 md:gap-6 text-center md:text-left mb-6">
+              <div className="space-y-3">
+                <h4 className="text-blue-600 font-black text-lg md:text-xl border-b-2 border-blue-100 pb-2 mb-3 uppercase tracking-tighter italic">100% Free</h4>
+                <div className="flex items-center justify-center md:justify-start gap-3 font-bold text-base text-slate-700 bg-blue-50/50 p-2.5 rounded-lg"><CheckCircle className="text-blue-600 shrink-0" size={20} fill="white" /> 15분 1:1 체험</div>
+                <div className="flex items-center justify-center md:justify-start gap-3 font-bold text-base text-slate-700 bg-blue-50/50 p-2.5 rounded-lg"><CheckCircle className="text-blue-600 shrink-0" size={20} fill="white" /> 강점 찾기 리포트</div>
+                <p className="text-slate-400 font-bold text-xs md:pl-1">카드 정보 입력 없이 100% 무료로 제공됩니다.</p>
               </div>
-              <div className="space-y-6">
-                <h4 className="text-slate-400 font-black text-2xl border-b-2 border-slate-100 pb-3 mb-6 uppercase tracking-tighter italic">Zero Risk</h4>
-                <div className="flex items-center justify-center md:justify-start gap-4 font-bold text-lg text-slate-400 line-through decoration-red-400/50 decoration-2 p-3"><ShieldAlert size={24} className="shrink-0" /> 상담 전화 강요</div>
-                <div className="flex items-center justify-center md:justify-start gap-4 font-bold text-lg text-slate-400 line-through decoration-red-400/50 decoration-2 p-3"><ShieldAlert size={24} className="shrink-0" /> 유료 자동 전환</div>
-                <p className="text-slate-400 font-bold text-sm md:pl-2">체험만 해보고 마음에 안 들면 언제든 그만두세요.</p>
+              <div className="space-y-3">
+                <h4 className="text-slate-400 font-black text-lg md:text-xl border-b-2 border-slate-100 pb-2 mb-3 uppercase tracking-tighter italic">Zero Risk</h4>
+                <div className="flex items-center justify-center md:justify-start gap-3 font-bold text-base text-slate-400 line-through decoration-red-400/50 decoration-2 p-2.5 rounded-lg"><ShieldAlert size={20} className="shrink-0" /> 상담 전화 강요</div>
+                <div className="flex items-center justify-center md:justify-start gap-3 font-bold text-base text-slate-400 line-through decoration-red-400/50 decoration-2 p-2.5 rounded-lg"><ShieldAlert size={20} className="shrink-0" /> 유료 자동 전환</div>
+                <p className="text-slate-400 font-bold text-xs md:pl-1">체험만 해보고 마음에 안 들면 언제든 그만두세요.</p>
               </div>
             </div>
-            <button onClick={() => window.location.href = 'https://einenglish.com/apply'} className="w-full max-w-md bg-slate-900 text-white px-10 py-5 text-xl font-black rounded-2xl hover:bg-black hover:scale-105 transition-all shadow-xl">부담없이 신청하기</button>
+            <button onClick={() => window.location.href = 'https://einenglish.com/apply'} className="w-full max-w-md bg-slate-900 text-white px-8 py-3.5 text-base md:text-lg font-black rounded-xl hover:bg-black hover:scale-105 transition-all shadow-xl">부담없이 신청하기</button>
           </div>
         </div>
       </section>
 
-      <section id="why" className="py-10 xs:py-12 md:py-16 px-4 xs:px-5 md:px-6 border-b border-slate-100 bg-gradient-to-b from-white to-slate-50/50">
+      <section id="why" className="py-8 xs:py-10 md:py-12 px-4 xs:px-5 md:px-6 border-b border-slate-100 bg-gradient-to-b from-white to-slate-50/50">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-[10px] xs:text-xs font-bold text-blue-600 uppercase tracking-[0.2em] xs:tracking-[0.3em] mb-3 xs:mb-4">Why Choose Us</p>
           <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-black italic uppercase mb-4 xs:mb-6 md:mb-8 tracking-tighter text-slate-900">WHY EIN ENGLISH?</h2>
@@ -610,16 +611,16 @@ const App = () => {
         </div>
       </section>
 
-      <section id="infra" className="py-10 xs:py-12 md:py-24 px-4 xs:px-5 md:px-6 border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white">
+      <section id="infra" className="py-8 xs:py-10 md:py-16 px-4 xs:px-5 md:px-6 border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-[10px] xs:text-xs font-bold text-slate-500 uppercase tracking-[0.2em] xs:tracking-[0.3em] mb-3 xs:mb-4">Infrastructure</p>
           <h2 className="text-xl xs:text-2xl md:text-4xl font-black mb-6 xs:mb-8 md:mb-16 tracking-tight uppercase italic text-slate-900">SERVICE INFRA</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { t: "명문대 강사진", d: "상위 1% 검증된 베테랑의 맞춤 피드백.", img: `${base}images/service-infra/teacher.png`, icon: <GraduationCap size={48} className="text-white/90" />, color: "bg-blue-600" },
-              { t: "스마트 매칭", d: "내 스케줄에 맞춰 시간 자유 선택.", img: `${base}images/service-infra/smartmatching.png`, icon: <MousePointer2 size={48} className="text-white/90" />, color: "bg-slate-900" },
-              { t: "카톡 지원", d: "평일 18시까지 실시간 문의 해결.", img: `${base}images/service-infra/kakao-talk-support.png`, icon: <Headphones size={48} className="text-white/90" />, color: "bg-amber-400" },
-              { t: "ESL 교재", d: "글로벌 스탠다드 & 아인 전용 자료.", img: `${base}images/service-infra/esl-book.png`, icon: <Globe size={48} className="text-white/90" />, color: "bg-red-500" }
+              { t: "명문대 강사진", d: "상위 1% 검증된 베테랑의 맞춤 피드백.", img: `${imgBase}images/service-infra/teacher.png`, icon: <GraduationCap size={48} className="text-white/90" />, color: "bg-blue-600" },
+              { t: "스마트 매칭", d: "내 스케줄에 맞춰 시간 자유 선택.", img: `${imgBase}images/service-infra/smartmatching.png`, icon: <MousePointer2 size={48} className="text-white/90" />, color: "bg-slate-900" },
+              { t: "카톡 지원", d: "평일 18시까지 실시간 문의 해결.", img: `${imgBase}images/service-infra/kakao-talk-support.png`, icon: <Headphones size={48} className="text-white/90" />, color: "bg-amber-400" },
+              { t: "ESL 교재", d: "글로벌 스탠다드 & 아인 전용 자료.", img: `${imgBase}images/service-infra/esl-book.png`, icon: <Globe size={48} className="text-white/90" />, color: "bg-red-500" }
             ].map((item, i) => (
               <div key={i} className="aspect-[4/3] rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 shadow-xl cursor-pointer">
                 <img src={item.img} alt={item.t} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -643,7 +644,7 @@ const App = () => {
         </div>
       </section>
 
-      <section id="management" className="py-10 xs:py-12 md:py-24 px-4 xs:px-5 md:px-6 border-b border-slate-100 bg-white">
+      <section id="management" className="py-8 xs:py-10 md:py-16 px-4 xs:px-5 md:px-6 border-b border-slate-100 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 xs:mb-10 md:mb-20">
             <p className="text-xs font-bold text-blue-600 uppercase tracking-[0.3em] mb-4">System</p>
@@ -710,12 +711,12 @@ const App = () => {
           <h2 className="text-xl xs:text-2xl md:text-5xl font-black mb-8 xs:mb-12 md:mb-20 uppercase italic tracking-tighter">나에게 맞는 학습과정</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { t: '일반 회화', d: '여행·일상에서 바로 써먹는 실전 표현 위주 말하기.', img: `${base}images/curriculum/regular-class.png`, color: 'bg-blue-600' },
-              { t: '프리토킹', d: '자유로운 주제로 대화하며 자연스러운 문장 습득.', img: `${base}images/curriculum/free-talking.png`, color: 'bg-orange-500' },
-              { t: '주니어 회화', d: '아이가 스스로 말하고 싶어지게 만드는 과정.', img: `${base}images/curriculum/junior-class.png`, color: 'bg-green-500' },
-              { t: '공인시험 준비', d: 'TOEIC·OPIc 등 시험 유형별 실전 템플릿.', img: `${base}images/service-infra/esl-book.png`, color: 'bg-purple-500' },
-              { t: '인터뷰 영어', d: '면접 답변 구성 및 자신감 향상 반복 훈련.', img: `${base}images/curriculum/interview.png`, color: 'bg-cyan-500' },
-              { t: '비즈니스 회화', d: '이메일·회의 등 실제 업무 상황 시뮬레이션.', img: `${base}images/curriculum/business.png`, color: 'bg-pink-500' }
+              { t: '일반 회화', d: '여행·일상에서 바로 써먹는 실전 표현 위주 말하기.', img: `${imgBase}images/curriculum/regular-class.png`, color: 'bg-blue-600' },
+              { t: '프리토킹', d: '자유로운 주제로 대화하며 자연스러운 문장 습득.', img: `${imgBase}images/curriculum/free-talking.png`, color: 'bg-orange-500' },
+              { t: '주니어 회화', d: '아이가 스스로 말하고 싶어지게 만드는 과정.', img: `${imgBase}images/curriculum/junior-class.png`, color: 'bg-green-500' },
+              { t: '공인시험 준비', d: 'TOEIC·OPIc 등 시험 유형별 실전 템플릿.', img: `${imgBase}images/service-infra/esl-book.png`, color: 'bg-purple-500' },
+              { t: '인터뷰 영어', d: '면접 답변 구성 및 자신감 향상 반복 훈련.', img: `${imgBase}images/curriculum/interview.png`, color: 'bg-cyan-500' },
+              { t: '비즈니스 회화', d: '이메일·회의 등 실제 업무 상황 시뮬레이션.', img: `${imgBase}images/curriculum/business.png`, color: 'bg-pink-500' }
             ].map((course, i) => (
               <div key={i} className="group relative aspect-video xs:aspect-[1.4/1] md:aspect-[1.2/1] rounded-2xl md:rounded-[2rem] overflow-hidden flex flex-col justify-end p-6 md:p-10 text-left cursor-pointer shadow-lg hover:-translate-y-2 transition-transform duration-300">
                 <img src={course.img} alt={course.t} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -737,7 +738,7 @@ const App = () => {
       </section>
 
       {/* Animation Section */}
-      <section id="animation" className="py-10 xs:py-12 md:py-24 px-4 xs:px-5 md:px-6 bg-gradient-to-b from-slate-900 to-slate-800 text-center border-b border-slate-700">
+      <section id="animation" className="py-8 xs:py-10 md:py-16 px-4 xs:px-5 md:px-6 bg-gradient-to-b from-slate-900 to-slate-800 text-center border-b border-slate-700">
         <div className="max-w-6xl mx-auto">
           <p className="text-[10px] xs:text-xs font-bold text-blue-400 uppercase tracking-[0.2em] xs:tracking-[0.3em] mb-3 xs:mb-4">Animation Contents</p>
           <h2 className="text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-black mb-4 xs:mb-6 md:mb-6 italic tracking-tight text-white">
@@ -749,13 +750,13 @@ const App = () => {
 
           <div className="flex overflow-x-auto gap-4 md:gap-6 pb-8 snap-x px-4 -mx-4 scrollbar-hide">
             {[
-              { t: 'BLUEY', i: `${base}images/animation/bluey.png` },
-              { t: 'DC KIDS', i: `${base}images/animation/dc-kids.png` },
-              { t: 'MAX & RUBY', i: `${base}images/animation/max&ruby.png` },
-              { t: 'PIP AND POSY', i: `${base}images/animation/pip-and-posy.png` },
-              { t: 'POWERPUFF GIRLS', i: `${base}images/animation/powerpuff-girls.png` },
-              { t: 'ROB THE ROBOT', i: `${base}images/animation/robtherobot.png` },
-              { t: 'VOOKS SCIENCE', i: `${base}images/animation/vooks-science.png` }
+              { t: 'BLUEY', i: `${imgBase}images/animation/bluey.png` },
+              { t: 'DC KIDS', i: `${imgBase}images/animation/dc-kids.png` },
+              { t: 'MAX & RUBY', i: `${imgBase}${encodeURI('images/animation/max&ruby.png')}` },
+              { t: 'PIP AND POSY', i: `${imgBase}images/animation/pip-and-posy.png` },
+              { t: 'POWERPUFF GIRLS', i: `${imgBase}images/animation/powerpuff-girls.png` },
+              { t: 'ROB THE ROBOT', i: `${imgBase}images/animation/robtherobot.png` },
+              { t: 'VOOKS SCIENCE', i: `${imgBase}images/animation/vooks-science.png` }
             ].map((item, i) => (
               <div key={i} className="flex-none w-64 md:w-80 aspect-video bg-slate-800 rounded-2xl md:rounded-[1.5rem] flex flex-col items-center justify-center font-black text-slate-300 border-2 border-slate-700 group cursor-pointer hover:bg-slate-700 hover:border-blue-500 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] transition-all overflow-hidden relative snap-center">
                 <div className="absolute inset-0 bg-slate-700">
@@ -777,7 +778,7 @@ const App = () => {
       </section>
 
       {/* Textbooks Section */}
-      <section id="textbooks" className="py-10 xs:py-12 md:py-24 px-4 xs:px-5 md:px-6 bg-white text-center border-b border-slate-100">
+      <section id="textbooks" className="py-8 xs:py-10 md:py-16 px-4 xs:px-5 md:px-6 bg-white text-center border-b border-slate-100">
         <div className="max-w-6xl mx-auto">
           <p className="text-[10px] xs:text-xs font-bold text-blue-600 uppercase tracking-[0.2em] xs:tracking-[0.3em] mb-3 xs:mb-4">Textbooks</p>
           <h2 className="text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-black mb-4 xs:mb-6 md:mb-6 italic tracking-tight text-slate-900">
@@ -815,16 +816,16 @@ const App = () => {
         </div>
       </section>
 
-      <section id="process" className="py-10 xs:py-12 md:py-20 px-4 xs:px-5 md:px-6 bg-gradient-to-b from-white to-slate-50/50 border-b border-slate-100">
+      <section id="process" className="py-6 xs:py-8 md:py-10 px-4 xs:px-5 md:px-6 bg-gradient-to-b from-white to-slate-50/50 border-b border-slate-100">
         <div className="max-w-5xl mx-auto">
-          <div className="text-left mb-8 xs:mb-10 md:mb-12">
-            <p className="text-[10px] xs:text-xs font-bold text-blue-600 uppercase tracking-[0.2em] xs:tracking-[0.3em] mb-3 xs:mb-4">Process</p>
-            <h2 className="text-xl xs:text-2xl md:text-3xl lg:text-4xl font-black mb-3 xs:mb-4 md:mb-4 uppercase italic tracking-wide xs:tracking-widest text-slate-900">How It Works</h2>
-            <p className="text-slate-500 font-bold text-sm xs:text-base md:text-lg italic">5단계로 시작하는 영어 말문 트기</p>
+          <div className="text-left mb-5 xs:mb-6 md:mb-8">
+            <p className="text-[10px] xs:text-xs font-bold text-blue-600 uppercase tracking-[0.2em] xs:tracking-[0.3em] mb-2 xs:mb-3">Process</p>
+            <h2 className="text-lg xs:text-xl md:text-2xl lg:text-3xl font-black mb-2 xs:mb-3 uppercase italic tracking-wide xs:tracking-widest text-slate-900">How It Works</h2>
+            <p className="text-slate-500 font-bold text-xs xs:text-sm md:text-base italic">5단계로 시작하는 영어 말문 트기</p>
           </div>
 
           {/* Compact Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-2">
             {[
               { t: "무료 신청", d: "결제 정보 없이 시간 선택" },
               { t: "1:1 체험", d: "15분 프리토킹" },
@@ -833,18 +834,18 @@ const App = () => {
               { t: "집중 관리", d: "매 수업 교정·피드백" }
             ].map((step, i) => (
               <div key={i} className="relative group h-full">
-                <div className="bg-white border-2 border-slate-100 hover:border-blue-500 p-5 md:p-6 rounded-2xl transition-all hover:shadow-xl hover:-translate-y-1 flex md:flex-col items-start md:items-center gap-5 md:gap-4 text-left md:text-center h-full group-hover:bg-blue-50/30">
+                <div className="bg-white border-2 border-slate-100 hover:border-blue-500 p-4 md:p-4 rounded-xl transition-all hover:shadow-xl hover:-translate-y-1 flex md:flex-col items-start gap-3 text-left h-full group-hover:bg-blue-50/30">
                   {/* Number Badge */}
-                  <div className="shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center font-black text-lg md:text-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-inner">
+                  <div className="shrink-0 w-9 h-9 md:w-10 md:h-10 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center font-black text-base md:text-lg group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-inner">
                     {i + 1}
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1">
-                    <h4 className="text-lg md:text-lg font-black mb-1 md:mb-2 text-slate-800 tracking-tight group-hover:text-blue-700 transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-base md:text-base font-black mb-0.5 md:mb-1 text-slate-800 tracking-tight group-hover:text-blue-700 transition-colors text-left">
                       {step.t}
                     </h4>
-                    <p className="text-sm md:text-xs text-slate-500 font-bold leading-snug break-keep group-hover:text-slate-600">
+                    <p className="text-xs text-slate-500 font-bold leading-snug break-keep group-hover:text-slate-600">
                       {step.d}
                     </p>
                   </div>
@@ -882,10 +883,10 @@ const App = () => {
         </div>
       </section>
 
-      <section id="reviews" className="py-10 xs:py-12 md:py-24 px-4 xs:px-5 md:px-6 border-b border-slate-100 bg-gradient-to-b from-slate-50 to-white text-left">
+      <section id="reviews" className="py-8 xs:py-10 md:py-16 px-4 xs:px-5 md:px-6 border-b border-slate-100 bg-gradient-to-b from-slate-50 to-white text-left">
         <div className="max-w-6xl mx-auto">
           <p className="text-[10px] xs:text-xs font-bold text-blue-600 uppercase tracking-[0.2em] xs:tracking-[0.3em] mb-3 xs:mb-4">Stories</p>
-          <h2 className="text-xl xs:text-2xl md:text-3xl lg:text-4xl font-black mb-10 xs:mb-12 md:mb-24 tracking-tighter italic uppercase tracking-[0.2em] xs:tracking-[0.3em] text-slate-900">REAL SUCCESS STORIES</h2>
+          <h2 className="text-xl xs:text-2xl md:text-3xl lg:text-4xl font-black mb-10 xs:mb-12 md:mb-24 tracking-tighter italic uppercase tracking-[-1px] text-slate-900">REAL SUCCESS STORIES</h2>
 
 
           {/* Mixed Reviews Grid - Mobile Optimized */}
@@ -945,13 +946,13 @@ const App = () => {
                 </button>
                 <div className="flex flex-col items-center gap-2 xs:gap-3">
                   <button className="text-slate-400 font-black hover:text-white transition-colors text-sm xs:text-base md:text-lg flex items-center gap-2 xs:gap-3 uppercase tracking-widest border-b border-slate-800 pb-1 xs:pb-2">
-                    <MessageCircle size={18} className="text-yellow-500 xs:w-6 xs:h-6" /> Kakao talk Support
+                    <img src={`${imgBase}images/service-infra/kakao-talk-logo.png`} alt="카카오톡" className="w-[18px] h-[18px] xs:w-6 xs:h-6 object-contain" /> 카톡으로 문의하기
                   </button>
-                  <p className="text-[10px] xs:text-xs opacity-40 font-bold tracking-wide break-keep">🚫 카드정보 입력 없음 | 🚫 상담 전화 강요 없음</p>
+                  <p className="text-[10px] xs:text-xs opacity-40 font-bold tracking-wide whitespace-nowrap">🚫 카드정보 입력 없음 | 🚫 상담 전화 강요 없음</p>
                 </div>
               </div>
             </div>
-            <div className="absolute top-0 right-0 p-4 xs:p-8 md:p-10 opacity-5 font-black text-[5rem] xs:text-[8rem] md:text-[15rem] italic select-none pointer-events-none group-hover:scale-110 transition-transform tracking-tighter">AIN</div>
+            <div className="absolute top-0 right-0 p-4 xs:p-8 md:p-10 opacity-5 font-black text-[5rem] xs:text-[8rem] md:text-[15rem] italic select-none pointer-events-none group-hover:scale-110 transition-transform tracking-tighter">EINE</div>
           </div>
         </div>
       </section>
@@ -973,7 +974,7 @@ const App = () => {
 
         {/* Main Footer: Business Info */}
         <div className="max-w-6xl mx-auto px-6 py-10">
-          <img src={`${base}ain-english-logo.png`} alt="아인잉글리쉬" className="h-8 mb-6 object-contain opacity-80 filter grayscale hover:grayscale-0 transition-all" />
+          <img src={`${imgBase}ain-english-logo.png`} alt="아인잉글리쉬" className="h-8 mb-6 object-contain opacity-80 filter grayscale hover:grayscale-0 transition-all" />
 
           <div className="grid md:grid-cols-2 gap-y-2 gap-x-8 max-w-4xl text-[11px] leading-relaxed text-slate-500">
             <div className="flex gap-2">
@@ -1075,8 +1076,8 @@ const App = () => {
       }
 
       {/* Floating Kakao Button */}
-      <a href="#" className="fixed bottom-6 right-6 z-[99] w-14 h-14 bg-[#FEE500] rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform cursor-pointer overflow-hidden border-2 border-[#FEE500] animate-bounce-subtle hover:shadow-yellow-400/50">
-        <img src={`${base}images/service-infra/kakao-talk-support.png`} alt="Kakao Talk" className="w-full h-full object-cover" />
+      <a href="#" className="fixed bottom-6 right-6 z-[101] w-14 h-14 bg-[#FEE500] rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform cursor-pointer overflow-hidden border-2 border-[#FEE500] animate-bounce-subtle hover:shadow-yellow-400/50">
+        <img src={`${imgBase}images/service-infra/kakao-talk-logo.png`} alt="Kakao Talk" className="w-full h-full object-cover" />
       </a>
 
     </div >
