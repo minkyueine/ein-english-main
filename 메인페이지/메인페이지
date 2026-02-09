@@ -6,7 +6,7 @@ import {
   RotateCcw, MessageSquare, Clock, ShieldCheck, Target, GraduationCap,
   MousePointer2, Headphones, Globe, ClipboardCheck, LayoutList, FileBarChart,
   Check, TrendingUp, UserPlus, Info, ShieldAlert, HeartHandshake, Smile, PlayCircle,
-  Gift, Timer, PenTool, Mic, History, Infinity, Sparkles, Menu, X
+  Gift, Timer, PenTool, Mic, History, Infinity, Menu, X
 } from 'lucide-react';
 
 const App = () => {
@@ -66,11 +66,10 @@ const App = () => {
       
       {/* [Top Banner] 2026년 새해 성공 캠페인 */}
       <div 
-        className="bg-gradient-to-r from-slate-900 to-black text-white py-3 px-4 text-center text-xs md:text-sm font-bold tracking-wide flex items-center justify-center gap-2 cursor-pointer hover:bg-slate-800 transition-colors relative z-50" 
+        className="bg-gradient-to-r from-slate-900 to-black text-white py-3.5 px-3 sm:px-4 text-center text-xs md:text-sm font-bold tracking-wide flex flex-wrap items-center justify-center gap-2 cursor-pointer hover:bg-slate-800 transition-colors relative z-50" 
         onClick={scrollToHero}
       >
-         <Sparkles size={14} className="text-yellow-400 animate-pulse shrink-0" fill="currentColor" />
-         <span className="truncate">2026년 새해에는 반드시 성공하세요! ✨ 아인이 <span className="text-yellow-400 underline decoration-yellow-400/30 underline-offset-4 decoration-2">무제한</span>으로 지원합니다.</span>
+         <span className="min-w-0 w-full sm:w-auto break-words text-center">2026 새해 성공! ✨ 아인이 <span className="text-yellow-400 underline decoration-yellow-400/30 underline-offset-4 decoration-2">무제한</span> 지원합니다.</span>
       </div>
 
       {/* 0. 플로팅 버튼 (모바일/데스크탑 최적화) */}
